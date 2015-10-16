@@ -1,9 +1,14 @@
 package com.nathansass.funfacts;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+import java.util.Random;
 
 public class FunFacts extends AppCompatActivity {
 
@@ -11,6 +16,24 @@ public class FunFacts extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fun_facts);
+
+        // Declare our view vars
+        final TextView factlabel = (TextView) findViewById(R.id.factTextView);
+        Button showFactButton = (Button) findViewById(R.id.showFactButton);
+
+        View.OnClickListener listener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // button clicked
+                String fact = "";
+                Random randomGenerator = new Random();
+                int randomNumber = randomGenerator.nextInt(3);
+                fact = randomNumber + "";
+
+                factlabel.setText(fact);
+            }
+        };
+        showFactButton.setOnClickListener(listener);
     }
 
     @Override

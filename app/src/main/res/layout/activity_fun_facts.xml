@@ -3,9 +3,33 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".FunFacts">
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".FunFacts"
+    android:background="#9f9aff">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <TextView android:text="Did you know?" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/headerPrompt"
+        android:textSize="24sp"
+        android:textColor="#96ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ants Stretch when they wake up"
+        android:id="@+id/factTextView"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="24sp"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show New Fact"
+        android:id="@+id/showFactButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="#ffffff" />
 
 </RelativeLayout>
