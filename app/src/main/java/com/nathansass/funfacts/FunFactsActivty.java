@@ -2,12 +2,15 @@ package com.nathansass.funfacts;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class FunFacts extends AppCompatActivity {
+public class FunFactsActivty extends AppCompatActivity {
+
+    public static final String TAG = FunFactsActivty.class.getSimpleName();
 
     private FactBook mFactBook = new FactBook();
     private ColorWheel mColorWheel = new ColorWheel();
@@ -36,5 +39,8 @@ public class FunFacts extends AppCompatActivity {
         };
 
         showFactButton.setOnClickListener(listener);
+
+//        Toast.makeText(this, "Yay! Activity created", Toast.LENGTH_LONG).show();
+        Log.d(TAG, "----------------      We're logging from the onCreate() method!");
     }
 }
